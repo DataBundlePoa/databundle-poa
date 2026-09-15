@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UOK Freshers Night 2026 | Tickets</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:#151515;
+  min-height:100vh;
+}
+
+.container{
+  width:100%;
+  max-width:520px;
+  margin:auto;
+  padding:15px;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  padding:8px 0 18px;
+}
+
+.logo{
+  width:72px;
+  height:72px;
+  margin:auto;
+  border-radius:50%;
+  background:linear-gradient(135deg,#4d0fff,#813cff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:23px;
+  font-weight:900;
+  box-shadow:0 10px 25px rgba(77,15,255,.18);
+}
+
+.header h1{
+  margin-top:13px;
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:-.7px;
+}
+
+.header p{
+  margin-top:5px;
+  color:#777;
+  font-size:14px;
+}
+
+/* EVENT CARD */
+.event-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:25px;
+  padding:27px 21px;
+  background:linear-gradient(135deg,#4d0fff,#7834ff);
+  color:white;
+  box-shadow:0 15px 38px rgba(77,15,255,.20);
+}
+
+.event-card::before{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:rgba(255,255,255,.07);
+  right:-90px;
+  top:-100px;
+}
+
+.event-small{
+  position:relative;
+  z-index:1;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  opacity:.85;
+}
+
+.event-card h2{
+  position:relative;
+  z-index:1;
+  margin-top:8px;
+  font-size:32px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.event-date{
+  position:relative;
+  z-index:1;
+  margin-top:14px;
+  font-size:15px;
+  font-weight:600;
+}
+
+.price{
+  position:relative;
+  z-index:1;
+  display:inline-block;
+  margin-top:18px;
+  padding:9px 17px;
+  background:#d9ff00;
+  color:#111;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:900;
+}
+
+/* FORM */
+.form-card{
+  margin-top:18px;
+  padding:20px;
+  border:1px solid #ededed;
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 8px 30px rgba(0,0,0,.055);
+}
+
+.field{
+  margin-bottom:15px;
+}
+
+label{
+  display:block;
+  margin-bottom:7px;
+  font-size:13px;
+  font-weight:800;
+}
+
+input,
+select{
+  width:100%;
+  height:51px;
+  border:1px solid #dedede;
+  border-radius:13px;
+  padding:0 14px;
+  font-size:15px;
+  outline:none;
+  background:#fafafa;
+  color:#111;
+}
+
+input:focus,
+select:focus{
+  border-color:#5b18ff;
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(91,24,255,.08);
+}
+
+/* TOTAL */
+.total{
+  margin:2px 0 16px;
+  padding:15px;
+  border-radius:15px;
+  background:#f6f6f6;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.total span{
+  color:#666;
+  font-size:14px;
+  font-weight:600;
+}
+
+.total strong{
+  color:#5b18ff;
+  font-size:22px;
+  font-weight:900;
+}
+
+/* PAYMENT BUTTON */
+.pay-btn{
+  width:100%;
+  height:56px;
+  border:0;
+  border-radius:15px;
+  background:#d9ff00;
+  color:#111;
+  font-size:16px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(170,195,0,.22);
+  transition:.2s;
+}
+
+.pay-btn:hover{
+  transform:translateY(-1px);
+}
+
+.pay-btn:disabled{
+  opacity:.65;
+  cursor:not-allowed;
+}
+
+/* STATUS */
+.status{
+  display:none;
+  margin-top:14px;
+  padding:14px;
+  border-radius:14px;
+  font-size:14px;
+  line-height:1.4;
+  text-align:center;
+  font-weight:600;
+}
+
+.status.show{
+  display:block;
+}
+
+.status.info{
+  background:#f1edff;
+  color:#5420bd;
+}
+
+.status.success{
+  background:#eaf9ed;
+  color:#19743a;
+}
+
+.status.error{
+  background:#fff0f0;
+  color:#bd2222;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn{
+  display:none;
+  width:100%;
+  height:52px;
+  margin-top:11px;
+  border:2px solid #5b18ff;
+  border-radius:15px;
+  background:#fff;
+  color:#5b18ff;
+  font-size:15px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.download-btn.show{
+  display:block;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:20px 0 8px;
+  color:#aaa;
+  font-size:11px;
+}
+
+.footer strong{
+  color:#5b18ff;
+}
+
+/* SPINNER */
+.spinner{
+  width:18px;
+  height:18px;
+  border:3px solid rgba(0,0,0,.15);
+  border-top-color:#111;
+  border-radius:50%;
+  display:inline-block;
+  vertical-align:middle;
+  animation:spin .7s linear infinite;
+  margin-right:7px;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@media(max-width:380px){
+
+  .container{
+    padding:12px;
+  }
+
+  .event-card h2{
+    font-size:28px;
+  }
+
+  .header h1{
+    font-size:24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+
+    <img
+  src="kabaianga logo.jpeg"
+  alt="University of Kabianga Logo"
+  class="uok-logo"
+>
+
+    <h1>UOK Freshers Night</h1>
+
+    <p>University of Kabianga</p>
+
+  </div>
+
+
+  <!-- EVENT -->
+  <div class="event-card">
+
+    <div class="event-small">
+      UNIVERSITY OF KABIANGA
+    </div>
+
+    <h2>
+      FRESHERS<br>
+      NIGHT 2026
+    </h2>
+
+    <div class="event-date">
+      📅 19 September 2026
+    </div>
+
+    <div class="price">
+      KES 100
+    </div>
+
+  </div>
+
+
+  <!-- FORM -->
+  <div class="form-card">
+
+    <!-- FULL NAME -->
+    <div class="field">
+
+      <label for="name">
+        Full Name
+      </label>
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+        autocomplete="name"
+      >
+
+    </div>
+
+
+    <!-- UOK REGISTRATION NUMBER -->
+    <div class="field">
+
+      <label for="registrationNumber">
+        UOK Registration Number
+      </label>
+
+      <input
+        type="text"
+        id="registrationNumber"
+        placeholder="Enter your registration number"
+        autocomplete="off"
+      >
+
+    </div>
+
+
+    <!-- M-PESA NUMBER -->
+    <div class="field">
+
+      <label for="phone">
+        M-PESA Number
+      </label>
+
+      <input
+        type="tel"
+        id="phone"
+        placeholder="07XXXXXXXX"
+        inputmode="tel"
+      >
+
+    </div>
+
+
+    <!-- QUANTITY -->
+    <div class="field">
+
+      <label for="quantity">
+        Tickets
+      </label>
+
+      <select id="quantity">
+
+        <option value="1">1 Ticket</option>
+        <option value="2">2 Tickets</option>
+        <option value="3">3 Tickets</option>
+        <option value="4">4 Tickets</option>
+        <option value="5">5 Tickets</option>
+        <option value="6">6 Tickets</option>
+        <option value="7">7 Tickets</option>
+        <option value="8">8 Tickets</option>
+        <option value="9">9 Tickets</option>
+        <option value="10">10 Tickets</option>
+
+      </select>
+
+    </div>
+
+
+    <!-- TOTAL -->
+    <div class="total">
+
+      <span>Total</span>
+
+      <strong id="total">
+        KES 100
+      </strong>
+
+    </div>
+
+
+    <!-- PAY -->
+    <button
+      class="pay-btn"
+      id="payBtn"
+      type="button"
+    >
+      PAY WITH M-PESA
+    </button>
+
+
+    <!-- STATUS -->
+    <div
+      class="status"
+      id="status"
+    ></div>
+
+
+    <!-- DOWNLOAD -->
+    <button
+      class="download-btn"
+      id="downloadBtn"
+      type="button"
+    >
+      🎟 DOWNLOAD TICKET
+    </button>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Powered by <strong>Joskev Developers</strong>
+  </div>
+
+</div>
+
+
+<script>
+
+const PRICE = 100;
+
+const PAYMENT_ENDPOINT =
+  "https://gosgcgajdecgtceniveh.supabase.co/functions/v1/paystack-ticket";
+
+
+/* =========================
+   ELEMENTS
+========================= */
+
+const nameInput =
+  document.getElementById("name");
+
+const registrationNumberInput =
+  document.getElementById("registrationNumber");
+
+const phoneInput =
+  document.getElementById("phone");
+
+const quantityInput =
+  document.getElementById("quantity");
+
+const totalEl =
+  document.getElementById("total");
+
+const payBtn =
+  document.getElementById("payBtn");
+
+const statusEl =
+  document.getElementById("status");
+
+const downloadBtn =
+  document.getElementById("downloadBtn");
+
+
+let paidOrder = null;
+
+
+/* =========================
+   UPDATE TOTAL
+========================= */
+
+function updateTotal(){
+
+  const quantity =
+    Number(quantityInput.value);
+
+  const amount =
+    PRICE * quantity;
+
+  totalEl.textContent =
+    "KES " + amount.toLocaleString();
+
+}
+
+quantityInput.addEventListener(
+  "change",
+  updateTotal
+);
+
+
+/* =========================
+   NORMALIZE PHONE
+========================= */
+
+function normalizePhone(value){
+
+  let phone =
+    String(value || "")
+      .trim()
+      .replace(/\s+/g,"");
+
+
+  if(phone.startsWith("+254")){
+    return phone;
+  }
+
+
+  if(phone.startsWith("254")){
+    return "+" + phone;
+  }
+
+
+  if(
+    phone.startsWith("07") ||
+    phone.startsWith("01")
+  ){
+
+    return "+254" +
+      phone.substring(1);
+
+  }
+
+
+  if(
+    phone.startsWith("7") ||
+    phone.startsWith("1")
+  ){
+
+    return "+254" + phone;
+
+  }
+
+
+  return phone;
+
+}
+
+
+/* =========================
+   SHOW STATUS
+========================= */
+
+function showStatus(message,type){
+
+  statusEl.textContent =
+    message;
+
+  statusEl.className =
+    "status show " + type;
+
+}
+
+
+/* =========================
+   M-PESA PAYMENT
+========================= */
+
+payBtn.addEventListener(
+  "click",
+  async function(){
+
+    const name =
+      nameInput.value.trim();
+
+    const registrationNumber =
+      registrationNumberInput.value.trim();
+
+    const phone =
+      normalizePhone(
+        phoneInput.value
+      );
+
+    const quantity =
+      Number(
+        quantityInput.value
+      );
+
+    const amount =
+      PRICE * quantity;
+
+
+    /* =====================
+       NAME VALIDATION
+    ===================== */
+
+    if(!name){
+
+      showStatus(
+        "Enter your full name.",
+        "error"
+      );
+
+      nameInput.focus();
+
+      return;
+
+    }
+
+
+    /* =====================
+       REGISTRATION VALIDATION
+    ===================== */
+
+    if(!registrationNumber){
+
+      showStatus(
+        "Enter your UOK Registration Number.",
+        "error"
+      );
+
+      registrationNumberInput.focus();
+
+      return;
+
+    }
+
+
+    /* =====================
+       PHONE VALIDATION
+    ===================== */
+
+    if(
+      !/^\+254[17]\d{8}$/.test(phone)
+    ){
+
+      showStatus(
+        "Enter a valid Kenyan M-PESA number.",
+        "error"
+      );
+
+      phoneInput.focus();
+
+      return;
+
+    }
+
+
+    /* =====================
+       DISABLE BUTTON
+    ===================== */
+
+    payBtn.disabled = true;
+
+    payBtn.innerHTML =
+      '<span class="spinner"></span> PROCESSING...';
+
+
+    showStatus(
+      "Sending M-PESA prompt...",
+      "info"
+    );
+
+
+    try{
+
+      /* =====================
+         SEND PAYMENT REQUEST
+      ===================== */
+
+      const response =
+        await fetch(
+          PAYMENT_ENDPOINT,
+          {
+            method:"POST",
+
+            headers:{
+              "Content-Type":
+                "application/json"
+            },
+
+            body:JSON.stringify({
+
+              customerName:
+                name,
+
+              registrationNumber:
+                registrationNumber,
+
+              phone:
+                phone,
+
+              ticketType:
+                "UOK Freshers Night",
+
+              quantity:
+                quantity,
+
+              amount:
+                amount
+
+            })
+
+          }
+        );
+
+
+      /* =====================
+         READ RESPONSE
+      ===================== */
+
+      const data =
+        await response.json();
+
+
+      console.log(
+        "Payment response:",
+        data
+      );
+
+
+      /* =====================
+         SERVER ERROR
+      ===================== */
+
+      if(!response.ok){
+
+        throw new Error(
+          data.error ||
+          data.message ||
+          "Payment request failed."
+        );
+
+      }
+
+
+      /* =====================
+         CREATE ORDER
+      ===================== */
+
+      const order = {
+
+        orderId:
+          data.orderId || "",
+
+        reference:
+          data.reference ||
+          data.paystackReference ||
+          "",
+
+        customerName:
+          name,
+
+        registrationNumber:
+          registrationNumber,
+
+        phone:
+          phone,
+
+        quantity:
+          quantity,
+
+        amount:
+          amount,
+
+        ticketType:
+          "UOK Freshers Night",
+
+        eventDate:
+          "19 September 2026",
+
+        createdAt:
+          new Date().toISOString()
+
+      };
+
+
+      /* =====================
+         SAVE PENDING
+      ===================== */
+
+      localStorage.setItem(
+        "uok_pending_ticket",
+        JSON.stringify(order)
+      );
+
+
+      /* =====================
+         CHECK PAYMENT STATUS
+      ===================== */
+
+      const paymentConfirmed =
+
+        data.paid === true ||
+
+        data.paymentConfirmed === true ||
+
+        [
+          "PAID",
+          "SUCCESS",
+          "COMPLETED"
+        ].includes(
+          String(
+            data.status || ""
+          ).toUpperCase()
+        );
+
+
+      /* =====================
+         PAYMENT CONFIRMED
+      ===================== */
+
+      if(paymentConfirmed){
+
+        paidOrder =
+          order;
+
+
+        localStorage.setItem(
+          "uok_paid_ticket",
+          JSON.stringify(order)
+        );
+
+
+        showStatus(
+          "Payment confirmed. Your ticket is ready.",
+          "success"
+        );
+
+
+        downloadBtn.classList.add(
+          "show"
+        );
+
+      }
+
+
+      /* =====================
+         PAYMENT PENDING
+      ===================== */
+
+      else{
+
+        showStatus(
+          "M-PESA prompt sent. Check your phone and enter your PIN.",
+          "info"
+        );
+
+      }
+
+
+    }catch(error){
+
+      console.error(
+        "Payment error:",
+        error
+      );
+
+
+      showStatus(
+        error.message ||
+        "Something went wrong. Please try again.",
+        "error"
+      );
+
+
+    }finally{
+
+      payBtn.disabled = false;
+
+      payBtn.textContent =
+        "PAY WITH M-PESA";
+
+    }
+
+  }
+);
+
+
+/* =========================
+   DOWNLOAD TICKET
+========================= */
+
+downloadBtn.addEventListener(
+  "click",
+  function(){
+
+    /*
+     * Recover confirmed ticket
+     * after page refresh.
+     */
+
+    if(!paidOrder){
+
+      const saved =
+        localStorage.getItem(
+          "uok_paid_ticket"
+        );
+
+
+      if(saved){
+
+        try{
+
+          paidOrder =
+            JSON.parse(saved);
+
+        }catch(error){
+
+          paidOrder = null;
+
+        }
+
+      }
+
+    }
+
+
+    if(!paidOrder){
+
+      showStatus(
+        "Payment has not been confirmed yet.",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    createTicket(
+      paidOrder
+    );
+
+  }
+);
+
+
+/* =========================
+   CREATE TICKET
+========================= */
+
+function createTicket(order){
+
+  const ticketNumber =
+    order.orderId ||
+    order.reference ||
+    "UOK-" + Date.now();
+
+
+  const ticketHTML = `
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1.0"
+>
+
+<title>UOK Freshers Night Ticket</title>
+
+<style>
+
+body{
+  margin:0;
+  padding:25px;
+  background:#f4f4f4;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.ticket{
+  max-width:430px;
+  margin:auto;
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.top{
+  background:linear-gradient(
+    135deg,
+    #4d0fff,
+    #7834ff
+  );
+  color:#fff;
+  padding:32px 22px;
+  text-align:center;
+}
+
+.uok{
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+  opacity:.9;
+}
+
+.top h1{
+  margin:10px 0 0;
+  font-size:28px;
+}
+
+.top p{
+  margin:8px 0 0;
+  font-size:14px;
+  opacity:.9;
+}
+
+.body{
+  padding:25px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:15px;
+  padding:13px 0;
+  border-bottom:1px solid #eee;
+}
+
+.label{
+  color:#888;
+}
+
+.value{
+  font-weight:bold;
+  text-align:right;
+  word-break:break-word;
+}
+
+.price{
+  margin-top:20px;
+  padding:15px;
+  text-align:center;
+  background:#d9ff00;
+  color:#111;
+  border-radius:13px;
+  font-size:23px;
+  font-weight:900;
+}
+
+.footer{
+  text-align:center;
+  padding:18px;
+  color:#888;
+  font-size:12px;
+}
+
+@media print{
+
+  body{
+    background:#fff;
+    padding:0;
+  }
+
+  .ticket{
+    box-shadow:none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="ticket">
+
+  <div class="top">
+
+    <div class="uok">
+      UNIVERSITY OF KABIANGA
+    </div>
+
+    <h1>
+      FRESHERS NIGHT
+    </h1>
+
+    <p>
+      19 September 2026
+    </p>
+
+  </div>
+
+
+  <div class="body">
+
+
+    <!-- NAME -->
+
+    <div class="row">
+
+      <span class="label">
+        Name
+      </span>
+
+      <span class="value">
+        ${escapeHTML(order.customerName)}
+      </span>
+
+    </div>
+
+
+    <!-- REGISTRATION NUMBER -->
+
+    <div class="row">
+
+      <span class="label">
+        Registration No.
+      </span>
+
+      <span class="value">
+        ${escapeHTML(order.registrationNumber)}
+      </span>
+
+    </div>
+
+
+    <!-- TICKETS -->
+
+    <div class="row">
+
+      <span class="label">
+        Tickets
+      </span>
+
+      <span class="value">
+        ${Number(order.quantity)}
+      </span>
+
+    </div>
+
+
+    <!-- TICKET ID -->
+
+    <div class="row">
+
+      <span class="label">
+        Ticket ID
+      </span>
+
+      <span class="value">
+        ${escapeHTML(ticketNumber)}
+      </span>
+
+    </div>
+
+
+    <!-- PAID AMOUNT -->
+
+    <div class="price">
+      PAID • KES ${Number(order.amount).toLocaleString()}
+    </div>
+
+
+  </div>
+
+
+  <div class="footer">
+    Powered by Joskev Developers
+  </div>
+
+</div>
+
+
+<script>
+
+window.onload = function(){
+
+  window.print();
+
+};
+
+<\/script>
+
+</body>
+
+</html>
+
+`;
+
+
+  /* =====================
+     CREATE FILE
+  ===================== */
+
+  const blob =
+    new Blob(
+      [ticketHTML],
+      {
+        type:"text/html"
+      }
+    );
+
+
+  const url =
+    URL.createObjectURL(blob);
+
+
+  const link =
+    document.createElement("a");
+
+
+  link.href =
+    url;
+
+
+  link.download =
+    "UOK-Freshers-Night-Ticket.html";
+
+
+  document.body.appendChild(
+    link
+  );
+
+
+  link.click();
+
+
+  link.remove();
+
+
+  URL.revokeObjectURL(
+    url
+  );
+
+}
+
+
+/* =========================
+   ESCAPE HTML
+========================= */
+
+function escapeHTML(value){
+
+  return String(value)
+
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+
+    .replace(
+      /'/g,
+      "&#039;"
+    );
+
+}
+
+
+/* =========================
+   RESTORE PAID TICKET
+========================= */
+
+const savedPaid =
+  localStorage.getItem(
+    "uok_paid_ticket"
+  );
+
+
+if(savedPaid){
+
+  try{
+
+    paidOrder =
+      JSON.parse(savedPaid);
+
+
+    downloadBtn.classList.add(
+      "show"
+    );
+
+
+    showStatus(
+      "Payment confirmed. Your ticket is ready.",
+      "success"
+    );
+
+
+  }catch(error){
+
+    localStorage.removeItem(
+      "uok_paid_ticket"
+    );
+
+  }
+
+}
+
+
+/* =========================
+   INITIAL TOTAL
+========================= */
+
+updateTotal();
+
+</script>
+
+</body>
+</html>
